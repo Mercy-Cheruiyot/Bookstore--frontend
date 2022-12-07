@@ -1,22 +1,11 @@
 import { useState } from "react";
 
-const initialState = {
-  title: "",
-  author_id: "",
-  publication_year: "",
-  genre:"",
-  image_url:""
-};
-
 function NewBookForm({ onAddBook }) {
-  const [formData, setFormData] = useState(initialState);
-
-  function handleChange(e) {
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value,
-    });
-  }
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [genre, setGenre] = useState("");
+  const[publicationYear, setPublicationYear]= useState("")
+  const[authorId,setAuthorId]=useState("")
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,60 +14,19 @@ function NewBookForm({ onAddBook }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        title: title,
+        image: image,
+        genre:genre,
+        author_id:authorId,
+       publication_year:publicationYear
+
+      }),
     })
       .then((r) => r.json())
-      .then((newBook) => {
-        setFormData(initialState);
-        onAddBook(newBook);
-      });
+      .then((newBook) => onAddBook(newBook));
   }
 
-//   return (
-//     <div class="p-10">
-   
-//       <h2>New Book</h2>
-//       <form onSubmit={handleSubmit}>
-//         <label htmlFor="title">Title: </label>
-//         <input
-//           type="text"
-//           id="title"
-//           value={formData.title}
-//           onChange={handleChange}
-//         />
-//         <label htmlFor="image">Image URL: </label>
-//         <input
-//           type="text"
-//           id="image"
-//           value={formData.image}
-//           onChange={handleChange}
-//         />
-//         <label htmlFor="notes">Tasting Notes: </label>
-//         <input
-//           type="text"
-//           id="notes"
-//           value={formData.notes}
-//           onChange={handleChange}
-//         />
-//         <label htmlFor="description">Description: </label>
-//         <textarea
-//           id="description"
-//           value={formData.description}
-//           onChange={handleChange}
-//         />
-//         <label htmlFor="rating">Rating: </label>
-//         <input
-//           type="number"
-//           id="rating"
-//           max="5"
-//           value={formData.rating}
-//           onChange={handleChange}
-//         />
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// }
 return (
     <div class="p-10">
         <form class="w-full max-w-sm flex flex-col" onSubmit={handleSubmit} >
@@ -91,11 +39,26 @@ return (
                 <div class="md:w-2/3">
                     <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 
                     text-gray-700 leading-tight focus:outline-none 
-                    focus:bg-white focus:border-blue-500" id="title" type="text" placeholder="Enter Book Title" 
-                    name="title" onChange={handleChange} value={formData.title}/>
+                    focus:bg-white focus:border-blue-500"
+                     id="title" type="text" placeholder="Enter Book Title" 
+                    name="title" onChange={(e) => setTitle(e.target.value)} value={title}/>
                 </div>
             </div>
             <div class="md:flex md:justify-center mb-6">
+                <div class="md:w-1/3">
+                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="title">
+                        Category
+                    </label>
+                </div>
+                <div class="md:w-2/3">
+                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 
+                    text-gray-700 leading-tight focus:outline-none 
+                    focus:bg-white focus:border-blue-500"
+                     id="genre" type="text" placeholder="Enter Category" 
+                    name="genre"  onChange={(e) => setGenre(e.target.value)} value={genre}/>
+                </div>
+            </div>
+            {/* <div class="md:flex md:justify-center mb-6">
                 <div class="md:w-1/3">
                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="author">
                         Author
@@ -103,10 +66,10 @@ return (
                 </div>
                 <div class="md:w-2/3">
                     < input class="bg-gray-200 appearance-none border-2 border-gray-200 round" id="author" 
-                    type ="text" placeholder="Enter Author" name="author" onChange={handleChange} 
-                    value={formData.Author} />
+                    type ="number" placeholder="Enter Author" name="authorId"  onChange={(e) => setAuthorId(e.target.value)}
+                    value={authorId} />
                 </div>
-            </div>
+            </div> */}
             <div class="md:flex md:justify-center mb-6">
                 <div class="md:w-1/3">
                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="publication-year">
@@ -117,21 +80,11 @@ return (
                     <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 
                     leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="publication_year"
                      type="number"
-                     placeholder="Enter Year of Publication" name="publication_year"
-                     onChange={handleChange}
-                      value={formData.publication_year} />
+                     placeholder="Enter Year of Publication" name="publicationYear"
+                      onChange={(e) => setPublicationYear(e.target.value)}
+                      value={publicationYear} />
                 </div>
             </div>
-            {/* <div class="md:flex md:justify-center mb-6">
-                <div class="md:w-1/3">
-                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
-                        Description
-                    </label>
-                </div>
-                <div class="md:w-2/3">
-                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-password" type="text" placeholder="Enter Description" name="description" onChange={handleChange} value={formData.description} />
-                </div>
-            </div> */}
             <div class="md:flex md:justify-center mb-6">
                 <div class="md:w-1/3">
                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="image">
@@ -141,7 +94,7 @@ return (
                 <div class="md:w-2/3">
                     <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 
                     leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="image"
-                     type="url" placeholder="Upload Image link" name="image" onChange={handleChange} value={formData.image} />
+                     type="url" placeholder="Upload Image link" name="image"  onChange={(e) => setImage(e.target.value)} value={image} />
                 </div>
             </div>
             <div class="md:flex md:justify-center">
@@ -160,3 +113,75 @@ return (
 
 
 export default NewBookForm;
+
+// import { useState } from "react";
+
+// function NewBookForm({ onAddBook }) {
+//   const [title, setTitle] = useState("");
+//   const [image, setImage] = useState("");
+//   const [genre, setGenre] = useState("");
+//   const[publicationYear, setPublicationYear]= useState("")
+//   const[authorId,setAuthorId]=useState("")
+
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     fetch("/books", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         title: title,
+//         image: image,
+//         genre:genre,
+//         author_id:authorId,
+//        publication_year:publicationYear
+
+//       }),
+//     })
+//       .then((r) => r.json())
+//       .then((newBook) => onAddBook(newBook));
+//   }
+
+//   return (
+//     <div className="new-plant-form">
+//       <h2>New Book</h2>
+//       <form onSubmit={handleSubmit}>
+//         <input
+//           type="text"
+//           name="title"
+//           placeholder="Book Title"
+//           value={title}
+//           onChange={(e) => setTitle(e.target.value)}
+//         />
+//         <input
+//           type="url"
+//           name="image"
+//           placeholder="Image URL"
+//           value={image}
+//           onChange={(e) => setImage(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           name="genre"
+          
+//           placeholder="Genre"
+//           value={genre}
+//           onChange={(e) => setGenre(e.target.value)}
+//         />
+//           <input
+//           type="number"
+//           name="authorId"
+          
+//           placeholder="AuthorId"
+//           value={authorId}
+//           onChange={(e) => setAuthorId(e.target.value)}
+//         />
+
+
+//         <button type="submit">Add Book</button>
+//       </form>
+//     </div>
+//   );
+// }
+// export default NewBookForm;

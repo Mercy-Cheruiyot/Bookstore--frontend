@@ -9,7 +9,7 @@ import NavBar from "./Navbar";
 import Home from "../Pages/Home";
 import { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-// import BookList from "../Pages/BookList";
+import BookList from "../Pages/BookList";
 
 
 function App() {
@@ -34,12 +34,12 @@ function App() {
           <Route path="/new">
             <NewBookForm user={user} />
           </Route>
-          <Route path="/home">
+          <Route path="/">
             <Home />
           </Route>
-          {/* <Route path="/booklist">
+          <Route path="/booklist">
             <BookList/>
-          </Route> */}
+          </Route>
           <Route path="/author">
             <Author/>
           </Route>

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 //import Header from "./Header";
 import NewBookForm from "./NewBookForm.js";
-import BookItem from "../Pages/BookItem"
+import BookItem from "../Pages/BookItem";
+// import BookList from "./BookList"
 
 function Home() {
   const [books, setBooks] = useState([]);
@@ -16,19 +17,19 @@ function Home() {
     setBooks((books) => [...books, addedBook]);
   }
 
-//   function handleUpdateBook(updatedBook) {
-//     setbooks((books) =>
-//       books.map((book) => {
-//         return book.id === updatedBook.id ? updatedBook : book;
-//       })
-//     );
-//   }
+  function handleUpdateBook(updatedBook) {
+    setBooks((books) =>
+      books.map((book) => {
+        return book.id === updatedBook.id ? updatedBook : book;
+      })
+    );
+  }
 
-//   function handleDeleteBook(deletedBook) {
-//     setbooks((books) =>
-//       books.filter((book) => book.id !== deletedBook.id)
-//     );
-//   }
+  function handleDeleteBook(deletedBook) {
+    setBooks((books) =>
+      books.filter((book) => book.id !== deletedBook.id)
+    );
+  }
 
   return (
     <>
@@ -36,13 +37,14 @@ function Home() {
       <main>
         
         <NewBookForm onAddBook={handleAddBook} />
-        <div >
+        <div className="flex w-full justify-around flex-wrap">
+        
           {books.map((book) => (
             <BookItem
               key={book.id}
               book={book}
-            //   onUpdateBook={handleUpdateBook}
-            //   onDeleteBook={handleDeleteBook}
+              onUpdateBook={handleUpdateBook}
+              deletedBook={handleDeleteBook}
             />
           ))}
         </div>

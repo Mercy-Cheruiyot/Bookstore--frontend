@@ -47,8 +47,10 @@ function Login({ onLogin }) {
                     <label htmlFor="username">Username</label>
                     <input
                       type="text"
+                      id="username"
+                      autoComplete="off"
                       class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                      id="exampleFormControlInput1"
+                     
                       placeholder="Username"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
@@ -58,14 +60,16 @@ function Login({ onLogin }) {
                     <label htmlFor="password">Password:</label>
                     <input
                       type="password"
+                      id="password"
                       class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                      id="exampleFormControlInput1"autoComplete="current-password"value={password}
+                     autoComplete="current-password"
+                     value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
                     </div>
                     <div class="text-center pt-1 mb-12 pb-1">
                     <div class="flex space-x-2 justify-center">
-                      <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs 
+                      <button type="submit" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs 
                       leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700
                        focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition
                         duration-150 ease-in-out">Log In</button>
@@ -76,7 +80,7 @@ function Login({ onLogin }) {
                     <div class="flex items-center justify-between pb-6">
                     <p class="mb-0 mr-2">Don't have an account?</p>
                     <button
-                      type="button"
+                      type="submit"
                       class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                       data-mdb-ripple="true"
                       data-mdb-ripple-color="light">
@@ -89,9 +93,9 @@ function Login({ onLogin }) {
                 </form>
                 </div>
                 </div>
-                <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none" 
+                <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-teal-500" 
                 // style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);"
-                bg
+                
                 >
                   <div class="text-white px-4 py-6 md:p-12 md:mx-6">
                     <h4 class="text-xl font-semibold mb-6">We are more than just a company</h4>

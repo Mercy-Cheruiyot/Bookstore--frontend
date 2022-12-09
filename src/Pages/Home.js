@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import NewBookForm from "./NewBookForm.js";
 import BookItem from "../Pages/BookItem";
-import Search from "./Search.js";
+
+
 
 
 function Home() {
@@ -33,10 +34,11 @@ function Home() {
 
   return (
     <>
-      {/* <Header BookCount={books.length} /> */}
+  
       <main >
         
         <NewBookForm onAddBook={handleAddBook} />
+        
      
         <div className="grid grid-cols-3 p-1 px-1 py-1 gap-4">
         
@@ -45,12 +47,12 @@ function Home() {
               key={book.id}
               book={book}
               onUpdateBook={handleUpdateBook}
-              deletedBook={handleDeleteBook}
+              deleteBook={handleDeleteBook}
             />
           ))}
         </div>
       </main>
-      {/* <Search/> */}
+ 
     </>
   );
 }

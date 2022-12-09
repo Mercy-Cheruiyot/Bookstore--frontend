@@ -38,11 +38,14 @@ function NavBar ({ user, setUser }) {
                             
                             
                                 <li className='md:mx-8 md:my-0 my-2'>
-                                    <NavLink to='/BookList'>Book List</NavLink>
+                                    <NavLink to='/Home'>Home</NavLink>
                                 </li>
                                 
                                 <li className='md:mx-8 md:my-0 my-2'>
                                     <NavLink to='/Author'>Authors</NavLink>
+                                </li>
+                                <li className='md:mx-8 md:my-0 my-2'>
+                                    <NavLink to='/Genre'>Genres</NavLink>
                                 </li>
                                 <li className='md:mx-8 md:my-0 my-2 '>
                                     <NavLink to="/About" className="bg-green-400 hover:bg-green-600 hover:text-gray-100

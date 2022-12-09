@@ -29,12 +29,12 @@ const Footer = () => {
                        
                     </div>
                     <div class="w-1/4 text-sm ">
-                        <h3>CONTACT</h3>
+                        <h3>Contact</h3>
 
                         <div>Home</div>
-                        <div>Home</div>
-                        <div>Home</div>
-                        <div>Home</div>
+                        <div>About</div>
+                        <div>About</div>
+                   
                     </div>
                     </div>
                 <hr className="my-2 border-blue-800 sm:mx-auto dark:border-blue-700 lg:my-2" />

@@ -2,14 +2,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import LoginForm from "./LoginForm";
+import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import NavBar from "./Navbar";
 import Footer from "./Footer";
 import Profile from './Profile';
 import Author from "../Pages/Author";
 import Home from "../Pages/Home";
-import BookList from "../Pages/GenresFilter";
+import Genre from "../Pages/Genre";
 import About from "../Pages/About"
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     });
   }, []);
 
-  if (!user) return <LoginForm onLogin={setUser} />;
+  if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
@@ -33,8 +33,8 @@ function App() {
  user={user} setUser={setUser} />
       <main>
         <Switch>
-          <Route path="/BookList">
-            <BookList user={user}/>
+          <Route path="/Genre">
+            <Genre user={user}/>
           </Route>
           
             <Route exact path="/Author">
@@ -47,6 +47,9 @@ function App() {
             </Route>
             <Route path='/Signup'>
               <Signup/>
+            </Route>
+            <Route path='/Genre'>
+              <Genre/>
             </Route>
             
             <Route path="/">

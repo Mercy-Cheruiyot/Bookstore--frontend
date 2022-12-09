@@ -56,8 +56,8 @@ import React from "react";
 
 import { useState } from "react";
 
- function BookItem({ book,handleDeleteBook}){
- const   { id,title, image, authorId,publicationYear,genre } = book
+ function BookItem({ book,deleteBook}){
+ const   { id,title,image,publicationYear,genre } = book
  const [isInStock, setIsInStock] = useState(true);
  const imageStyle = {
     maxWidth: "400px",
@@ -73,7 +73,7 @@ import { useState } from "react";
         method: 'DELETE'
     }).then((r) => {
     if (r.ok) {
-      handleDeleteBook(book);
+      deleteBook(book);
     }
   });
 }

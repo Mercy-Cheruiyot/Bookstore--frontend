@@ -39,32 +39,28 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Once the app has been ![Login Page](https://user-images.githubusercontent.com/109534662/206704842-e60d58a5-d054-416f-a75c-74741421e169.png)
+set up.The login form loads
+If you dont have an account you can create one using the sign up section
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![SignupForm](https://user-images.githubusercontent.com/109534662/206704958-60595583-de00-4c94-8813-9c7fe1ac785a.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Home Page
 
-### Code Splitting
+![Home Page](https://user-images.githubusercontent.com/109534662/206705143-c4049ef5-70d5-4390-a20f-c81c594f6ed5.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##Authors page
 
-### Analyzing the Bundle Size
+![Authors Page](https://user-images.githubusercontent.com/109534662/206705272-8ddf4408-cbde-4ff0-8a03-380d8302d0ea.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##About Page
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![About us Page](https://user-images.githubusercontent.com/109534662/206705406-5bc0da56-7d27-4791-b1f0-20ae0c324266.png)
 
-### Advanced Configuration
+The Application fetches all the Books. You can filter using the filter button on the home page.
+You can add books too using the NewBookForm
+You can also delete a book 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

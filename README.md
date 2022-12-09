@@ -47,12 +47,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 -PostgreSQL(To run the database`
 
 ## Setup Installation
-~Clone the repository
--npm istall (for the react section)
--npm start (to start the server)
--bundle install (to install all the gem files)
--rails db:migrate db:seed
--rails s to start the server`
+
+
+`-Clone the repository`
+`-npm istall (for the react section)`
+`-npm start (to start the server)`
+`-bundle install (to install all the gem files)`
+`-rails db:migrate db:seed`
+`-rails s to start the server`
 
 
 

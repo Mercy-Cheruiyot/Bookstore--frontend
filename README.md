@@ -10,7 +10,8 @@ In the project directory, you can run:
 
 ## Runs the app in the development mode..
 netlify https://wonderful-frangipane-13ab15.netlify.app/
-railway https://github.com/Mercy-Cheruiyot/Bookstore--frontend
+railway storebooks-production.up.railway.app↗
+backend-link is https://github.com/Mercy-Cheruiyot/Bookstore-api
 
 
 

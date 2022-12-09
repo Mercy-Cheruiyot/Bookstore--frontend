@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "./Search";
 import AuthorCard from "./AuthorCard";
 import { useState, useEffect } from "react";
 

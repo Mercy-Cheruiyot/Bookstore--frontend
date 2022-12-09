@@ -39,8 +39,29 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+### Setup Requirements
+
+`Git to clone the repository
+-Rails 2.7.4
+-React
+-PostgreSQL(To run the database`
+
+## Setup Installation
+~Clone the repository
+-npm istall (for the react section)
+-npm start (to start the server)
+-bundle install (to install all the gem files)
+-rails db:migrate db:seed
+-rails s to start the server`
+
+
+
+
 ## Once the app has been set up.The login form loads
-If you dont have an account you can create one using the sign up section
+## The Admin logins are
+ "username: Admin"
+ "password: password"
+ 
 
 
 ![Login Page](https://user-images.githubusercontent.com/109534662/206704842-e60d58a5-d054-416f-a75c-74741421e169.png)

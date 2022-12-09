@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 // // import { Link } from "react-router-dom";
 
 // function BookItem({ book, 
@@ -55,8 +55,9 @@
 // export default BookItem;
 
 import { useState } from "react";
+
  function BookItem({ book,handleDeleteBook}){
- const   { id,title, image, authorId,publicationYear,genre,userId } = book
+ const   { id,title, image, authorId,publicationYear,genre } = book
  const [isInStock, setIsInStock] = useState(true);
  const imageStyle = {
     maxWidth: "400px",
@@ -78,14 +79,14 @@ import { useState } from "react";
 }
 
  return(
-        // <div key={id} className="houses-list bg-gray-800 p-2 rounded-lg my-4 max-w-xs">
+      
             <div key={id} class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <img className="mb-4 w-full rounded-lg" src={image} alt="title" style={imageStyle} />
         <div className="md:p-4 p-2">
-                <h2 className="font-semibold text-gray-300 md:text-3xl text-xl">{title}</h2>
+                <h2 className="font-semibold text-blue-500 md:text-3xl text-xl">{title}</h2>
                 <h3 className="text-blue-400 md:text-xl text-lg font-light">{publicationYear}</h3>
                 <h3 className="text-blue-400 md:text-xl text-lg font-light">{genre}</h3>
-                <h3 className="md:text-xl text-lg text-green-500 font-medium">$ {authorId}</h3>
+                <h3 className="md:text-xl text-lg text-green-500 font-medium"> {book.authorId}</h3>
             </div>
             <div  class="flex flex-row" >
             <div class="basis-1/2">

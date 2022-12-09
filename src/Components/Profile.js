@@ -1,10 +1,30 @@
-import
-function Profile(){
-    return(
-        <img
-  src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-  class="rounded-full w-32"
-  alt="Avatar"
-/>
-    )
-}
+// import React from 'react';
+// import Card from "./Card";
+// import { useState, useEffect } from "react";
+
+
+// function Profile() {
+//     const [user, setUser] = useState(null);
+      
+//         useEffect(() => {
+//           // auto-login
+//           fetch("/me").then((r) => {
+//             if (r.ok) {
+//               r.json().then((user) => setUser(user));
+//             }
+//           });
+//         }, []);
+      
+//         if (!user) return <Login onLogin={setUser} />;
+//     return(
+//         <div>
+            
+//             {user.map((user) => (
+//                 <Card key={user.id} user={user} />
+//         ))}
+          
+//             </div>
+
+//     );
+// }
+// export default Profile;

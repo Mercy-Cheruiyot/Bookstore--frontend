@@ -3,7 +3,7 @@ const Footer = () => {
     return ( 
         
         <div>
-            <footer class="bg-grey-200 px-8 -py-8">
+            <footer class="bg-grey-200 px-10 pt-8 pb-8">
                 <div class="grid md:grid-cols-4  text-sm  " >
                     <div class="w-1/3">
                         <div class="uppercase font-semibold mb-4 flex justify-center md:justify-start"> Halisi BookStore </div>

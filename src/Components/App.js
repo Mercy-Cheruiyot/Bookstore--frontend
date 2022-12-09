@@ -1,18 +1,19 @@
 // import './App.css';
-import Login from "./LoginForm";
-// import SignUp from "./Signup";
-// import Header from "./Header"
-import Author from "../Pages/Author";
-import Footer from "./Footer"
-import NewBookForm from "../Pages/NewBookForm.js";
-import NavBar from "./Navbar";
-import Home from "../Pages/Home";
+import React from "react";
 import { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import BookList from "../Pages/BookList";
-
+import LoginForm from "./LoginForm";
+import Signup from "../Pages/Signup";
+import NavBar from "./Navbar";
+import Footer from "./Footer";
+import Profile from './Profile';
+import Author from "../Pages/Author";
+import Home from "../Pages/Home";
+import BookList from "../Pages/GenresFilter";
+import About from "../Pages/About"
 
 function App() {
+  
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -24,24 +25,32 @@ function App() {
     });
   }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
+  if (!user) return <LoginForm onLogin={setUser} />;
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
+      <NavBar
+ user={user} setUser={setUser} />
       <main>
         <Switch>
-          <Route path="/new">
-            <NewBookForm user={user} />
+          <Route path="/BookList">
+            <BookList user={user}/>
           </Route>
-          <Route path="/">
+          
+            <Route exact path="/Author">
+              <Author/>
+              </Route>
+            <Route exact path="/Profile" element ={<Profile/>}/>
+          
+          <Route path='/About'>
+            <About/>
+            </Route>
+            <Route path='/Signup'>
+              <Signup/>
+            </Route>
+            
+            <Route path="/">
             <Home />
-          </Route>
-          <Route path="/booklist">
-            <BookList/>
-          </Route>
-          <Route path="/author">
-            <Author/>
           </Route>
         </Switch>
         <Footer />
@@ -52,51 +61,4 @@ function App() {
 
 export default App;
 
-// function App() {
-//   const [user, setUser] = useState(null);
-
-//   useEffect(() => {
-//     fetch("/me").then((response) => {
-//       if (response.ok) {
-//         response.json().then((user) => setUser(user));
-//       }
-//     });
-//   }, []);
-
-//   function handleLogin(user) {
-//     setUser(user);
-//   }
-
-//   function handleLogout() {
-//     setUser(null);
-//   }
-
-//   return (
-//     <div className="App">
-//       <Header user={user} onLogout={handleLogout} />
-//       <Navbar />
-//       <Switch>
-
-        
-//         <Route exact path="/login">
-//           <Login onLogin={handleLogin} />
-//         </Route>
-//         <Route exact path="/signup"> 
-//          <SignUp onSignUp={handleLogin}/>
-//         </Route>
-//         <Route exact path="/home"> 
-//          <Home />
-//         </Route>
-        
-        
-       
-//       </Switch>
-//     </div>
-//   );
-// }
-
-
-
-
-// export default App;
 

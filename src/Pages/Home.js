@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-//import Header from "./Header";
 import NewBookForm from "./NewBookForm.js";
 import BookItem from "../Pages/BookItem";
-// import BookList from "./BookList"
+import Search from "./Search.js";
+
 
 function Home() {
   const [books, setBooks] = useState([]);
@@ -34,10 +34,11 @@ function Home() {
   return (
     <>
       {/* <Header BookCount={books.length} /> */}
-      <main>
+      <main >
         
         <NewBookForm onAddBook={handleAddBook} />
-        <div className="flex w-full justify-around flex-wrap">
+     
+        <div className="grid grid-cols-3 p-1 px-1 py-1 gap-4">
         
           {books.map((book) => (
             <BookItem
@@ -49,6 +50,7 @@ function Home() {
           ))}
         </div>
       </main>
+      {/* <Search/> */}
     </>
   );
 }

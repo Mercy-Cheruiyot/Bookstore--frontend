@@ -12,6 +12,14 @@ In the project directory, you can run:
 netlify https://wonderful-frangipane-13ab15.netlify.app/
 railway storebooks-production.up.railway.app↗
 backend-link is https://github.com/Mercy-Cheruiyot/Bookstore-api
+netlify https://wonderful-frangipane-13ab15.netlify.app
+
+
+
+railway "https://storebooks-production.up.railway.app"
+
+## github back-end
+https://github.com/Mercy-Cheruiyot/Bookstore-api
 
 
 

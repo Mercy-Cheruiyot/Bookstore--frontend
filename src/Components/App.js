@@ -6,7 +6,6 @@ import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import NavBar from "./Navbar";
 import Footer from "./Footer";
-import Profile from './Profile';
 import Author from "../Pages/Author";
 import Home from "../Pages/Home";
 import Genre from "../Pages/Genre";
@@ -18,7 +17,7 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch("https://storebooks-production.up.railway.app/me").then((r) => {
+    fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
@@ -40,7 +39,7 @@ function App() {
             <Route exact path="/Author">
               <Author/>
               </Route>
-            <Route exact path="/Profile" element ={<Profile/>}/>
+     
           
           <Route path='/About'>
             <About/>

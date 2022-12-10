@@ -56,7 +56,7 @@ import React from "react";
 
 import { useState } from "react";
 
- function BookItem({ book,deleteBook}){
+ function BookItem({ book,deleteBook,updateBook}){
  const   { id,title,image,publicationYear,genre } = book
  const [isInStock, setIsInStock] = useState(true);
  const imageStyle = {
@@ -69,7 +69,7 @@ import { useState } from "react";
     setIsInStock((isInStock) => !isInStock);
   }
   function handleBookDelete(){
-    fetch(`https://storebooks-production.up.railway.app/books/${id}`, {
+    fetch(`/books/${id}`, {
         method: 'DELETE'
     }).then((r) => {
     if (r.ok) {
@@ -77,10 +77,20 @@ import { useState } from "react";
     }
   });
 }
+function handleUpdate(){
+  fetch(`/books/${id}`, {
+      method: 'PATCH'
+  }).then((r) => {
+  if (r.ok) {
+    updateBook(book);
+  }
+});
+}
+
 
  return(
       
-            <div key={id} class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div key={id} onClick={handleUpdate} className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <img className="mb-4 w-full rounded-lg" src={image} alt="title" style={imageStyle} />
         <div className="md:p-4 p-2">
                 <h2 className="font-semibold text-blue-500 md:text-3xl text-xl">{title}</h2>
@@ -88,15 +98,15 @@ import { useState } from "react";
                 <h3 className="text-blue-400 md:text-xl text-lg font-light">{genre}</h3>
                 <h3 className="md:text-xl text-lg text-green-500 font-medium"> {book.authorId}</h3>
             </div>
-            <div  class="flex flex-row" >
-            <div class="basis-1/2">
+            <div  className="flex flex-row" >
+            <div className="basis-1/2">
             < button onClick={handleBookDelete}
             // class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"
             className="primary">
                 Delete Book
             </button> 
             </div>
-            <div class="basis-1/2">
+            <div className="basis-1/2">
             
 
       {isInStock ? (
@@ -109,6 +119,7 @@ import { useState } from "react";
       </div>
       </div>
       </div>
+      
       
   );
  

@@ -22,7 +22,7 @@ function Genre(){
   }
   
   useEffect(()=>{
-      fetch("https://storebooks-production.up.railway.app/books")
+      fetch("/books")
       .then((res)=>res.json())
       .then((data)=>{
         setgenres(data)
@@ -33,7 +33,7 @@ function Genre(){
   function filterHandler(e){
     setDisplayedgenres(displayedgenres => {
       return (
-        genres.filter(book => book.category === e.target.value)
+        genres.filter(book => book.genre === e.target.value)
       )
     })
   }

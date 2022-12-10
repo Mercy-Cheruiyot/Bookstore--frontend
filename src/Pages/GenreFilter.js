@@ -15,7 +15,6 @@ function GenreFilter({genres, displayedgenres}){
         }
     })
 
-    console.log("genres: ", uniq_genre)
     // Use the uniq genres to create options
     const genre_options = uniq_genre.map(genre => {
         return <option value={genre.value} key= {genre.id}>{genre.value}</option>

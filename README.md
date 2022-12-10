@@ -1,9 +1,9 @@
 # Book Store
 This is an application that displays all the books that are in the store.
 The app was created using
-### `React `
-### `Rails`
-### `Tailwind Css`
+#### `React `
+#### `Rails`
+#### `Tailwind Css`
 
 
 
@@ -39,20 +39,20 @@ https://github.com/Mercy-Cheruiyot/Bookstore-api
 ## Setup Installation
 
 
-# `-Clone the repository`
-# `-npm istall (for the react section)`
-# `-npm start (to start the server)`
-# `-bundle install (to install all the gem files)`
-# `-rails db:migrate db:seed`
-# `-rails s to start the server`
+##### `-Clone the repository`
+##### `-npm istall (for the react section)`
+##### `-npm start (to start the server)`
+##### `-bundle install (to install all the gem files)`
+##### `-rails db:migrate db:seed`
+##### `-rails s to start the server`
 
 
 
 
 ## Once the app has been set up.The login form loads
 ## The Admin logins are
- # `"username: Admin"`
- # `"password: password"`
+ #### `"username: Admin"`
+ #### `"password: password"`
  
 
 
@@ -77,10 +77,10 @@ https://github.com/Mercy-Cheruiyot/Bookstore-api
 
 ![About us Page](https://user-images.githubusercontent.com/109534662/206705406-5bc0da56-7d27-4791-b1f0-20ae0c324266.png)
 
-# The Application fetches all the Books. You can filter using the filter button on the home page.
-# You can add books too using the NewBookForm
-# You can also delete a book 
-# Lastly you can edit the book
+##### The Application fetches all the Books. You can filter using the filter button on the home page.
+##### You can add books too using the NewBookForm
+##### You can also delete a book 
+##### Lastly you can edit the book
 
 
 

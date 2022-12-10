@@ -69,7 +69,7 @@ import { useState } from "react";
     setIsInStock((isInStock) => !isInStock);
   }
   function handleBookDelete(){
-    fetch(`/books/${id}`, {
+    fetch(`https://storebooks-production.up.railway.app/books/${id}`, {
         method: 'DELETE'
     }).then((r) => {
     if (r.ok) {

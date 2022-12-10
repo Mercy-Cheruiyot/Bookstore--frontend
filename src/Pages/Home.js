@@ -9,7 +9,7 @@ function Home() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("/books")
+    fetch("https://storebooks-production.up.railway.app/books")
       .then((r) => r.json())
       .then(setBooks);
   }, []);

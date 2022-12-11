@@ -4,7 +4,7 @@ function AuthorCard({ author, onUpdateAuthor, onDeleteAuthor }) {
   
     function handleUpateAuthor() {
      
-      fetch(`/books/${id}`, {
+      fetch(`https://storebooks-production.up.railway.app/books/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -16,7 +16,7 @@ function AuthorCard({ author, onUpdateAuthor, onDeleteAuthor }) {
     }
   
     function handleDeleteAuthor() {
-      fetch(`/authors/${id}`, {
+      fetch(`https://storebooks-production.up.railway.app/authors/${id}`, {
         method: "DELETE",
       }).then((r) => {
         if (r.ok) {

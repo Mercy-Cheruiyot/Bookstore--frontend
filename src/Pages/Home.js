@@ -15,7 +15,7 @@ function Home() {
     fetch("https://storebooks-production.up.railway.app/books", {
       method: 'GET'})
       .then((r) => r.json())
-      .then(books => setBooks(books));
+      .then(books => setBooks([books]));
       // .then(setBooks);
   }, []);
   

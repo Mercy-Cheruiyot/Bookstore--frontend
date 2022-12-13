@@ -1,7 +1,7 @@
 // import './App.css';
 import React from "react";
 import { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import NavBar from "./Navbar";
@@ -31,7 +31,7 @@ function App() {
       <NavBar
  user={user} setUser={setUser} />
       <main>
-        <Switch>
+        <Routes>
           <Route path="/Genre">
             <Genre user={user}/>
           </Route>
@@ -54,7 +54,7 @@ function App() {
             <Route path="/">
             <Home />
           </Route>
-        </Switch>
+        </Routes>
         <Footer />
       </main>
     </>

@@ -31,7 +31,7 @@ function App() {
       <NavBar
  user={user} setUser={setUser} />
       <main>
-        <Routes>
+        <Switch>
           <Route path="/Genre">
             <Genre user={user}/>
           </Route>
@@ -54,7 +54,7 @@ function App() {
             <Route path="/">
             <Home />
           </Route>
-        </Routes>
+        </Switch>
         <Footer />
       </main>
     </>

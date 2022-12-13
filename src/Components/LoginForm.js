@@ -14,9 +14,10 @@ function LoginForm({ onLogin }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username,password }),
-      }).then((r) => 
+      }).then((r) => {
+        if (r.ok) {
           r.json().then((user) => onLogin(user));
-        
+        }
       });
     }
   

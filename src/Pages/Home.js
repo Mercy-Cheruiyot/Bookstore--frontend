@@ -12,7 +12,7 @@ function Home() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("/books", {
+    fetch("http://localhost:3000/books", {
       method: 'GET'})
       .then((r) => r.json())
       // .then(books => setBooks([books]));

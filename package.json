@@ -2,7 +2,7 @@
   "name": "bookstore--frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "proxy":"http://localhost:3000",
   "dependencies": {
     "16": "0.0.2",
     "@testing-library/jest-dom": "^5.16.5",

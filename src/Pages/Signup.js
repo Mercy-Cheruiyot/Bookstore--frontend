@@ -15,7 +15,7 @@ function Signup({ onLogin }) {
       e.preventDefault();
       setErrors([]);
     setIsLoading(true);
-      fetch("https://storebooks-production.up.railway.app/signup", {
+      fetch("/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

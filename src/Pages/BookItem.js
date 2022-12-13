@@ -69,7 +69,7 @@ import { useState } from "react";
     setIsInStock((isInStock) => !isInStock);
   }
   function handleBookDelete(){
-    fetch(`https://storebooks-production.up.railway.app/books/${id}`, {
+    fetch(`/books/${id}`, {
         method: 'DELETE'
     }).then((r) => {
     if (r.ok) {
@@ -78,7 +78,7 @@ import { useState } from "react";
   });
 }
 function handleUpdate(){
-  fetch(`https://storebooks-production.up.railway.app/books/${id}`, {
+  fetch(`/books/${id}`, {
       method: 'PATCH'
   }).then((r) => {
   if (r.ok) {

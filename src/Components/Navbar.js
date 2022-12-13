@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 function NavBar ({ user, setUser }) {
     function handleLogoutClick() {
-      fetch("https://storebooks-production.up.railway.app/logout",{ 
+      fetch("/logout",{ 
         method: "DELETE" })
         .then((r) => {
         if (r.ok) {

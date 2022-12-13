@@ -1,7 +1,7 @@
 // import './App.css';
 import React from "react";
 import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Switch,Route, Routes } from "react-router-dom";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import NavBar from "./Navbar";
@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch("https://storebooks-production.up.railway.app/me").then((r) => {
+    fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
@@ -25,6 +25,7 @@ function App() {
   }, []);
 
   if (!user) return <Login onLogin={setUser} />;
+  
 
   return (
     <>

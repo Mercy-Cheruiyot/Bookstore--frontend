@@ -12,7 +12,7 @@ function Home() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("/books", {
+    fetch("https://storebooks-production.up.railway.app/books", {
       method: 'GET'})
       .then((r) => r.json())
       // .then(books => setBooks([books]));

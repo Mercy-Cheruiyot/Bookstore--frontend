@@ -25,7 +25,7 @@ function Genres(){
     
     
     useEffect(()=>{
-        fetch(`/books`)
+        fetch(`https://storebooks-production.up.railway.app/books`)
         .then((responce)=>responce.json())
         .then((data)=>{
           setAllbooks(data)

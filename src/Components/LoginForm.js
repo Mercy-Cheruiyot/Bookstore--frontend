@@ -8,7 +8,7 @@ function LoginForm({ onLogin }) {
   
     function handleSubmit(e) {
       e.preventDefault();
-      fetch("/login", {
+      fetch("https://storebooks-production.up.railway.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

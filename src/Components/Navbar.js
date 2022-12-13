@@ -3,7 +3,9 @@ import { useRef } from "react";
 
 function NavBar ({ user, setUser }) {
     function handleLogoutClick() {
-      fetch("https://storebooks-production.up.railway.app/logout", { method: "DELETE" }).then((r) => {
+      fetch("/logout",{ 
+        method: "DELETE" })
+        .then((r) => {
         if (r.ok) {
           setUser(null);
         }

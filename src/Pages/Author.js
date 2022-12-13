@@ -7,7 +7,7 @@ function Author() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("https://storebooks-production.up.railway.app/authors")
+    fetch("/authors")
       .then((r) => r.json())
       .then(setAuthors);
   }, []);

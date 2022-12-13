@@ -22,7 +22,7 @@ function Genre(){
   }
   
   useEffect(()=>{
-      fetch("https://storebooks-production.up.railway.app/books")
+      fetch("/books")
       .then((res)=>res.json())
       .then((data)=>{
         setgenres(data)

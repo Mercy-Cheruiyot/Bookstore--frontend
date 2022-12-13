@@ -69,7 +69,7 @@ import { useState } from "react";
     setIsInStock((isInStock) => !isInStock);
   }
   function handleBookDelete(){
-    fetch(`https://storebooks-production.up.railway.app/books/${id}`, {
+    fetch(`/books/${id}`, {
         method: 'DELETE'
     }).then((r) => {
     if (r.ok) {
@@ -78,7 +78,7 @@ import { useState } from "react";
   });
 }
 function handleUpdate(){
-  fetch(`https://storebooks-production.up.railway.app/books/${id}`, {
+  fetch(`/books/${id}`, {
       method: 'PATCH'
   }).then((r) => {
   if (r.ok) {
@@ -91,7 +91,7 @@ function handleUpdate(){
  return(
       
             <div key={id} onClick={handleUpdate} className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <img className="mb-4 w-full rounded-lg" src={image} alt="title" style={imageStyle} />
+        <img className="mb-4 w-full rounded-lg" src={book.image} alt="title" style={imageStyle} />
         <div className="md:p-4 p-2">
                 <h2 className="font-semibold text-blue-500 md:text-3xl text-xl">{title}</h2>
                 <h3 className="text-blue-400 md:text-xl text-lg font-light">{publicationYear}</h3>

@@ -12,11 +12,11 @@ function Home() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("https://storebooks-production.up.railway.app/books", {
+    fetch("/books", {
       method: 'GET'})
       .then((r) => r.json())
-      .then(books => setBooks([books]));
-      // .then(setBooks);
+      // .then(books => setBooks([books]));
+      .then(setBooks);
   }, []);
   
 // const displayeditems=books.filter(book =>{return books.genre.toLowercase().includes(search.toLowerCase())})
